@@ -1,3 +1,5 @@
+#!/bin/bash
+
 ENV_LOCAL_PATH=/app/.env.local
 
 cat <<< "$DOTENV_LOCAL" > ${ENV_LOCAL_PATH}
