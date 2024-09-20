@@ -26,7 +26,7 @@ COPY --link --chown=1000 . .
 RUN npm run build
 
 FROM node:20-slim as app
-
+EXPOSE 8080
 RUN npm install -g dotenv-cli
 
 WORKDIR /app
