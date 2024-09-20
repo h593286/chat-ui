@@ -1,0 +1,36 @@
+FROM node:20 as base-builder
+WORKDIR /app
+
+# add package and lock information
+COPY --link --chown=1000 package-lock.json package.json ./
+
+# install dependencies and cache files
+RUN --mount=type=cache,target=/app/.npm \
+        npm set cache /app.npm && \
+        npm ci --omit=dev
+
+FROM base-builder as builder 
+
+ARG APP_BASE=
+ARG PUBLIC_APP_COLOR=blue
+ENV BODY_SIZE_LIMIT=15728640
+
+# cache and install dev-dependencies
+RUN --mount=type=cache,target=/app/.npm \
+        npm set cache /app/.npm && \
+        npm ci
+
+# copy project files
+COPY --link --chown=1000 . .
+
+RUN npm run build
+
+FROM node:20-slim as app
+
+RUN npm install -g dotenv-cli
+
+WORKDIR /app
+COPY --from=base-builder app/node_modules ./node_modules
+COPY package-lock.json package.json entrypoint.CI.sh .env ./
+COPY --from=builder app/build ./build
+CMD ["/bin/bash", "-c", "/app/entrypoint.CI.sh"]
