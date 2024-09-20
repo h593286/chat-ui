@@ -31,6 +31,7 @@ RUN npm install -g dotenv-cli
 
 WORKDIR /app
 COPY --from=base-builder app/node_modules ./node_modules
-COPY package-lock.json package.json entrypoint.CI.sh .env ./
+COPY package-lock.json package.json .env ./
+COPY --chown=1000:1000 --chmod=755 entrypoint.CI.sh ./
 COPY --from=builder app/build ./build
-CMD ["/bin/bash", "-c", "/app/entrypoint.CI.sh"]
+CMD ["./entrypoint.CI.sh"]
