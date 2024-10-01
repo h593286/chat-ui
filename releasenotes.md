@@ -1,5 +1,5 @@
 # Release Notes
---
+
 ## Release 1.0:
 Basic functions, no RAG system implemented, so the model is not grounded. 
 
