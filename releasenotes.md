@@ -3,6 +3,7 @@
 ## Release 1.0:
 ### Features:
 - **Basic Chat Functionality**
+- **Dark/Light Mode**: Can switch between Dark/Light mode by pressing "Theme"-button in the bottom left. 
 - **Multi Modal**: Can accept and access pictures uploaded.
 - **Course Books**: Has knowledge of the course material due to release timing of the books, but no RAG-system as of yet. Might lead to hallucinations, see **Known Bugs**.
 
