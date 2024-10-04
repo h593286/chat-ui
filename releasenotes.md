@@ -14,8 +14,12 @@
   **Fix**: Create new conversation window through the "New Chat"-button.
 
 - **Bug**: Unable to Update System Message.
+- 
   **Description**:If system message is updated, need to create new conversation for the prompt to kick in. Older customisations will be using the old prompt.
+
   **Fix**: Create new conversation window through the "New Chat"-button.
 - **Bug**: Chapter Hallucinations.
+
   **Description**: Sometimes refers to chapters in the book that doesnt exist or does not contain the material wanted. Overall LLM-hallucination problem.
+
   **Fix**: None. 
