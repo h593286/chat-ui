@@ -1,42 +1,21 @@
 ## Privacy
+### Authentication
 
-> Last updated: April 15, 2024
+We use **FEIDE** through **Microsoft Entra** for authentication. This process requires access to basic FEIDE personal information, including your name, email, and profile picture. This information is essential for creating and managing your user account.
 
-Users of HuggingChat are authenticated through their HF user account.
+### Chat Data
 
-We endorse Privacy by Design. As such, your conversations are private to you and will not be shared with anyone, including model authors, for any purpose, including for research or model training purposes.
+Your messages are stored in a **secure** chat database. This allows us to provide you with a complete chat history and to perform non-identifiable analysis (see the Analysis section below). You can delete your conversations at any time—individually or all at once—by navigating to *"Settings"* and selecting *"Delete all conversations."*
 
-You conversation data will only be stored to let you access past conversations. You can click on the Delete icon to delete any past conversation at any moment.
+### Analysis
 
-🗓 Please also consult huggingface.co's main privacy policy at <https://huggingface.co/privacy>. To exercise any of your legal privacy rights, please send an email to <privacy@huggingface.co>.
+Periodically, message logs are processed to remove identifiers (except for timestamps and raw text). These anonymized logs are sent to the Azure OpenAI GPT model for analysis. This analysis determines the course topics being discussed and the nature of the conversations (e.g., whether they involve quizzing, coding, etc.).
+The aggregated insights are shared with teachers to help them stay informed as more questions are directed to chatbots instead of instructors. Importantly, this analysis is non-identifiable and focuses on overall trends for the class, not on individual users.
 
-## About available LLMs
+### Cookies
 
-The goal of this app is to showcase that it is now possible to build an open source alternative to ChatGPT. 💪
+Cookies are used to enhance your experience by saving session states and preferences. This ensures ease of use, such as not requiring you to log in repeatedly.
 
-We aim to always provide a diverse set of state of the art open LLMs, hence we rotate the available models over time.
+## Contact 
 
-Historically, HuggingChat has been running models such as:
-
-- [Llama 2 70B](https://huggingface.co/meta-llama/Llama-2-70b-chat-hf)
-- [CodeLlama 35B](https://about.fb.com/news/2023/08/code-llama-ai-for-coding/)
-- [Falcon 180B](https://www.tii.ae/news/technology-innovation-institute-introduces-worlds-most-powerful-open-llm-falcon-180b)
-- [Mistral 7B](https://mistral.ai/news/announcing-mistral-7b/)
-- [Cohere Command R+](https://huggingface.co/chat/models/CohereForAI/c4ai-command-r-plus)
-- [Google Gemma 7B](https://huggingface.co/chat/models/google/gemma-1.1-7b-it)
-
-This is only a partial list. Check the [models](https://huggingface.co/chat/models/) page for up-to-date list of the best available LLMs.
-
-## Technical details
-
-This app is running in a [Space](https://huggingface.co/docs/hub/spaces-overview), which entails that the code for this UI is publicly visible [inside the Space repo](https://huggingface.co/spaces/huggingchat/chat-ui/tree/main).
-
-**Further development takes place on the [huggingface/chat-ui GitHub repo](https://github.com/huggingface/chat-ui).**
-
-The inference backend is running the optimized [text-generation-inference](https://github.com/huggingface/text-generation-inference) on HuggingFace's Inference API infrastructure.
-
-It is therefore possible to deploy a copy of this app to a Space and customize it (swap model, add some UI elements, or store user messages according to your own Terms and conditions). You can also 1-click deploy your own instance using the [Chat UI Spaces Docker template](https://huggingface.co/new-space?template=huggingchat/chat-ui-template).
-
-We welcome any feedback on this app: please participate to the public discussion at <https://huggingface.co/spaces/huggingchat/chat-ui/discussions>
-
-<a target="_blank" href="https://huggingface.co/spaces/huggingchat/chat-ui/discussions"><img src="https://huggingface.co/datasets/huggingface/badges/raw/main/open-a-discussion-xl.svg" title="open a discussion"></a>
+For any privacy concerns, email 593286@stud.hvl.no
