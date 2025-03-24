@@ -24,3 +24,8 @@
   **Description**: Sometimes refers to chapters in the book that doesnt exist or does not contain the material wanted. Overall LLM-hallucination problem.
 
   **Fix**: None. 
+
+
+## Release 2.0:
+### Features:
+- Now with RAG, consists of lectures, course book and slides
